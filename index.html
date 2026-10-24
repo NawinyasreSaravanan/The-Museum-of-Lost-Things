@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>FOUND — The Museum of Lost Things</title>
+  <meta name="description" content="An interactive digital museum dedicated to modern lost objects and forgotten moments (2000–2026). Everything lost leaves something behind.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="FOUND — The Museum of Lost Things">
+  <meta property="og:description" content="An interactive digital museum dedicated to modern lost objects and forgotten moments (2000–2026).">
+  <meta property="og:type" content="website">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. OPENING / MUSEUM ENTRANCE
+       ========================================================================= -->
+  <header id="entrance">
+    <div class="entrance-top">
+      <div class="entrance-meta">
+        <div>ARCHIVE / 001</div>
+        <div>COLLECTION / CONTEMPORARY ERA (2024–2026)</div>
+        <div style="color: var(--accent-vermilion); font-weight: 700;">24 ARTIFACTS REGISTERED</div>
+      </div>
+      <div class="archival-stamp">ESTABLISHED 2024 · LIVE ARCHIVE</div>
+    </div>
+
+    <div class="entrance-center">
+      <div class="entrance-title-sup">
+        <span>●</span>
+        <span>Interactive Digital Installation · Founded 2024</span>
+      </div>
+      <h1 class="entrance-main-title">FOUND</h1>
+      <h2 class="entrance-subtitle">THE MUSEUM<br>OF LOST THINGS</h2>
+
+      <p class="entrance-quote">
+        “Some things disappear.<br>
+        Some things remain.”
+      </p>
+
+      <div class="entrance-actions">
+        <button id="btn-enter-museum" class="btn-enter" aria-label="Enter the Museum Collection">
+          <span>ENTER THE COLLECTION</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+        <span class="entrance-footnote" style="font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.15em; color: var(--text-muted);">
+          CATALOGUE № 2024–2026 · 24 SPECIMENS
+        </span>
+      </div>
+    </div>
+
+    <div class="entrance-bottom">
+      <div class="tagline-callout">“Everything lost leaves something behind.”</div>
+      <div style="font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.2em; color: var(--text-muted);">
+        A CONTEMPORARY ARCHIVE EST. 2024
+      </div>
+    </div>
+  </header>
+
+  <!-- Kinetic Modern Marquee Ticker -->
+  <div class="marquee-ticker-wrap" aria-hidden="true">
+    <div class="marquee-ticker">
+      <span>DOWNTOWN LA <span class="ticker-accent">HOTEL KEYCARD</span> 2024</span>
+      <span>·</span>
+      <span>SHIBUYA STATION <span class="ticker-accent">METRO PASS</span> 2024</span>
+      <span>·</span>
+      <span>THAMES RIVER <span class="ticker-accent">SILVER RING</span> 2024</span>
+      <span>·</span>
+      <span>MARBLE CAFE <span class="ticker-accent">TORTOISESHELL SUNGLASSES</span> 2025</span>
+      <span>·</span>
+      <span>KREUZBERG CANAL <span class="ticker-accent">35MM CAMERA</span> 2025</span>
+      <span>·</span>
+      <span>GANGNAM RAIN <span class="ticker-accent">WIRELESS EARBUD</span> 2026</span>
+      <span>·</span>
+      <span>MISSION DISTRICT <span class="ticker-accent">128GB DRONE CARD</span> 2026</span>
+      <span>·</span>
+      <span>“LOST &amp; FOUND ARCHIVE EST. 2024”</span>
+      <span>·</span>
+      <span>DOWNTOWN LA <span class="ticker-accent">HOTEL KEYCARD</span> 2024</span>
+      <span>·</span>
+      <span>SHIBUYA STATION <span class="ticker-accent">METRO PASS</span> 2024</span>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       2. MUSEUM NAVIGATION (Smooth, Minimalist, No Sound Toggle)
+       ========================================================================= -->
+  <nav id="museum-nav" aria-label="Museum Navigation">
+    <div class="container nav-inner">
+      <div class="nav-brand">
+        <a href="#entrance" class="nav-logo">FOUND.</a>
+        <span class="nav-subbrand">EST. 2024</span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#collection" class="nav-link">COLLECTION</a></li>
+        <li><a href="#search" class="nav-link">ARCHIVE</a></li>
+        <li><a href="#categories" class="nav-link">CATEGORIES</a></li>
+        <li><a href="#timeline" class="nav-link">TIMELINE</a></li>
+        <li><a href="#map" class="nav-link">MAP</a></li>
+        <li><a href="#story-room" class="nav-link">STORIES</a></li>
+        <li><a href="#donate" class="nav-link">YOUR OBJECT</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <a href="#donate" class="nav-action-pill" style="text-decoration: none;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+            <circle cx="12" cy="13" r="4"></circle>
+          </svg>
+          <span class="nav-pill-full">+ ADD REAL PHOTO</span>
+          <span class="nav-pill-short">+ PHOTO</span>
+        </a>
+        <button id="mobile-toggle" class="mobile-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <svg class="hamburger-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+          <svg class="close-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-menu-drawer" aria-hidden="true">
+    <div class="mobile-drawer-header">
+      <span class="mobile-drawer-label">MUSEUM DIRECTORY</span>
+      <span class="mobile-drawer-indicator">● LIVE</span>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="#collection" class="mobile-nav-link"><span>COLLECTION</span><span class="nav-arrow">→</span></a></li>
+      <li><a href="#search" class="mobile-nav-link"><span>ARCHIVE & SEARCH</span><span class="nav-arrow">→</span></a></li>
+      <li><a href="#categories" class="mobile-nav-link"><span>CATEGORIES</span><span class="nav-arrow">→</span></a></li>
+      <li><a href="#timeline" class="mobile-nav-link"><span>TIMELINE (2024–2026)</span><span class="nav-arrow">→</span></a></li>
+      <li><a href="#map" class="mobile-nav-link"><span>RADAR MAP</span><span class="nav-arrow">→</span></a></li>
+      <li><a href="#story-room" class="mobile-nav-link"><span>ORAL STORIES</span><span class="nav-arrow">→</span></a></li>
+      <li><a href="#donate" class="mobile-nav-link"><span>CONTRIBUTE OBJECT</span><span class="nav-arrow">→</span></a></li>
+    </ul>
+    <div class="mobile-drawer-footer">
+      <div class="mobile-drawer-meta">FOUND. — THE MUSEUM OF LOST THINGS · EST. 2024</div>
+      <a href="#donate" class="btn-drawer-action">+ SUBMIT YOUR LOST OBJECT</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- =========================================================================
+         3. THE COLLECTION
+         ========================================================================= -->
+    <section id="collection">
+      <div class="container">
+        <div class="collection-header-row">
+          <div>
+            <div class="section-meta">CONTEMPORARY ARCHIVE (2024–2026)</div>
+            <h2 class="section-title">THE COLLECTION</h2>
+            <p class="section-subheading">
+              “Twenty-four authentic recoveries.<br>
+              Documented with high-definition real photography.”
+            </p>
+          </div>
+          <div class="collection-actions-bar">
+            <a href="#donate" class="btn-enter" style="text-decoration: none; padding: 0.8rem 1.4rem; font-size: 0.72rem;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                <circle cx="12" cy="13" r="4"></circle>
+              </svg>
+              <span>+ ADD REAL PHOTO OBJECT</span>
+            </a>
+            <button class="btn-random-lost">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+              </svg>
+              <span>SHOW ME SOMETHING LOST</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Category Filter Pills -->
+        <div class="gallery-category-bar" role="toolbar" aria-label="Filter Collection by Category">
+          <button class="cat-filter-btn active" data-cat="ALL">
+            <span>ALL</span>
+            <span class="cat-badge">24</span>
+          </button>
+          <button class="cat-filter-btn" data-cat="NOSTALGIA">
+            <span>NOSTALGIA</span>
+            <span class="cat-badge">04</span>
+          </button>
+          <button class="cat-filter-btn" data-cat="REGRET">
+            <span>REGRET</span>
+            <span class="cat-badge">02</span>
+          </button>
+          <button class="cat-filter-btn" data-cat="LOVE">
+            <span>LOVE</span>
+            <span class="cat-badge">03</span>
+          </button>
+          <button class="cat-filter-btn" data-cat="CHANGE">
+            <span>CHANGE</span>
+            <span class="cat-badge">04</span>
+          </button>
+          <button class="cat-filter-btn" data-cat="ABSENCE">
+            <span>ABSENCE</span>
+            <span class="cat-badge">04</span>
+          </button>
+          <button class="cat-filter-btn" data-cat="JOY">
+            <span>JOY</span>
+            <span class="cat-badge">03</span>
+          </button>
+          <button class="cat-filter-btn" data-cat="GOODBYE">
+            <span>GOODBYE</span>
+            <span class="cat-badge">03</span>
+          </button>
+          <button class="cat-filter-btn" data-cat="MYSTERY">
+            <span>MYSTERY</span>
+            <span class="cat-badge">03</span>
+          </button>
+        </div>
+
+        <!-- 24 Objects Gallery -->
+        <div id="collection-grid" class="collection-grid">
+          <!-- Dynamically populated via main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         5. SEARCH THE ARCHIVE
+         ========================================================================= -->
+    <section id="search">
+      <div class="container">
+        <div class="search-container">
+          <div class="section-meta">INDEX SEARCH</div>
+          <h2 class="section-title">SEARCH WHAT WAS LOST.</h2>
+          <p class="section-subheading">
+            Query across object names, categories, years (2024–2026), cities, or narrative memories.
+          </p>
+
+          <div class="search-input-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input
+              type="text"
+              id="search-input"
+              class="search-input"
+              placeholder="Search the collection (e.g. keycard, 2024, Shibuya, sunglasses)..."
+              aria-label="Search the collection"
+            />
+          </div>
+
+          <div class="search-results-meta">
+            <span id="search-count">RESULTS FOUND: 24 (INDEX VIEW)</span>
+            <span>SEARCH ARCHIVE</span>
+          </div>
+
+          <div id="search-results-grid" class="search-results-grid">
+            <!-- Populated via main.js -->
+          </div>
+
+          <div id="search-empty-state" class="search-empty-state">
+            <h3 class="search-empty-title">Nothing found.</h3>
+            <p class="search-empty-sub">Perhaps it is still lost.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         6. EMOTIONAL CATEGORIES
+         ========================================================================= -->
+    <section id="categories">
+      <div class="container">
+        <div class="section-meta">TAXONOMY OF MEMORY</div>
+        <h2 class="section-title">WHY DO WE KEEP THINGS?</h2>
+        <p class="section-subheading">
+          Explore lost objects categorized by the feelings that made them unforgettable.
+        </p>
+
+        <div class="categories-pills-row">
+          <button class="cat-btn active" onclick="document.querySelector('.cat-filter-btn[data-cat=\'NOSTALGIA\']').click(); document.getElementById('collection').scrollIntoView({behavior:'smooth'});">NOSTALGIA</button>
+          <button class="cat-btn" onclick="document.querySelector('.cat-filter-btn[data-cat=\'REGRET\']').click(); document.getElementById('collection').scrollIntoView({behavior:'smooth'});">REGRET</button>
+          <button class="cat-btn" onclick="document.querySelector('.cat-filter-btn[data-cat=\'LOVE\']').click(); document.getElementById('collection').scrollIntoView({behavior:'smooth'});">LOVE</button>
+          <button class="cat-btn" onclick="document.querySelector('.cat-filter-btn[data-cat=\'CHANGE\']').click(); document.getElementById('collection').scrollIntoView({behavior:'smooth'});">CHANGE</button>
+          <button class="cat-btn" onclick="document.querySelector('.cat-filter-btn[data-cat=\'ABSENCE\']').click(); document.getElementById('collection').scrollIntoView({behavior:'smooth'});">ABSENCE</button>
+          <button class="cat-btn" onclick="document.querySelector('.cat-filter-btn[data-cat=\'JOY\']').click(); document.getElementById('collection').scrollIntoView({behavior:'smooth'});">JOY</button>
+          <button class="cat-btn" onclick="document.querySelector('.cat-filter-btn[data-cat=\'GOODBYE\']').click(); document.getElementById('collection').scrollIntoView({behavior:'smooth'});">GOODBYE</button>
+          <button class="cat-btn" onclick="document.querySelector('.cat-filter-btn[data-cat=\'MYSTERY\']').click(); document.getElementById('collection').scrollIntoView({behavior:'smooth'});">MYSTERY</button>
+        </div>
+
+        <div class="category-dossier-card">
+          <div class="cat-card-header">
+            <h3 class="cat-card-title">NOSTALGIA</h3>
+            <span class="cat-card-count">04 SPECIMENS</span>
+          </div>
+          <p class="cat-card-quote">
+            “Some objects are valuable only because they remember a version of us we can never inhabit again.”
+          </p>
+          <button class="btn-enter" onclick="document.getElementById('collection').scrollIntoView({behavior:'smooth'});" style="padding: 0.9rem 1.8rem; font-size: 0.75rem;">
+            <span>VIEW SPECIMENS IN COLLECTION</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         7. THE ARCHIVE TIMELINE (Started 2024 to Present 2026)
+         ========================================================================= -->
+    <section id="timeline">
+      <div class="container">
+        <div class="section-meta">CONTEMPORARY CHRONOLOGY (2024–2026)</div>
+        <h2 class="section-title">A CHRONOLOGY OF THINGS FOUND</h2>
+        <p class="section-subheading">
+          Explore recoveries from the founding of the Lost &amp; Found in 2024 to today.
+        </p>
+
+        <div class="timeline-nav-track" role="tablist" aria-label="Timeline Years">
+          <button class="timeline-year-btn active" data-year="2024">2024 (INAUGURAL)</button>
+          <button class="timeline-year-btn" data-year="2024-AUTUMN">2024 (AUTUMN)</button>
+          <button class="timeline-year-btn" data-year="2024-WINTER">2024 (WINTER)</button>
+          <button class="timeline-year-btn" data-year="2025-SPRING">2025 (SPRING)</button>
+          <button class="timeline-year-btn" data-year="2025-SUMMER">2025 (SUMMER)</button>
+          <button class="timeline-year-btn" data-year="2026-WINTER">2026 (WINTER)</button>
+          <button class="timeline-year-btn" data-year="2026-PRESENT">2026 (PRESENT)</button>
+        </div>
+
+        <div id="timeline-display-card" class="timeline-display-card">
+          <!-- Populated via main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         8. THE LOST MAP (Modern Digital Radar Map)
+         ========================================================================= -->
+    <section id="map">
+      <div class="container">
+        <div class="section-meta">GLOBAL RECOVERY MAP (2024–2026)</div>
+        <h2 class="section-title">WHERE THINGS DISAPPEAR</h2>
+        <p class="section-subheading">
+          Click any location below to view recovered modern objects and telemetry.
+        </p>
+
+        <!-- Quick location buttons -->
+        <div class="map-quick-buttons">
+          <button class="map-quick-btn active" data-location="TOKYO">
+            <span>●</span> TOKYO (2024)
+          </button>
+          <button class="map-quick-btn" data-location="NEW YORK">
+            <span>●</span> NEW YORK (2024)
+          </button>
+          <button class="map-quick-btn" data-location="LONDON">
+            <span>●</span> LONDON (2024)
+          </button>
+          <button class="map-quick-btn" data-location="BERLIN">
+            <span>●</span> BERLIN (2025)
+          </button>
+          <button class="map-quick-btn" data-location="SEOUL">
+            <span>●</span> SEOUL (2025)
+          </button>
+          <button class="map-quick-btn" data-location="SAN FRANCISCO">
+            <span>●</span> SAN FRANCISCO (2026)
+          </button>
+        </div>
+
+        <div class="map-layout-grid">
+          <!-- Lightweight Interactive Vector SVG Map -->
+          <div class="map-viewport-frame">
+            <svg class="radar-map-svg" viewBox="0 0 1000 650" xmlns="http://www.w3.org/2000/svg">
+              <!-- Dark Clean Background -->
+              <rect width="1000" height="650" fill="#080C14" />
+
+              <!-- Range Rings -->
+              <circle cx="500" cy="325" r="100" fill="none" stroke="#1E293B" stroke-width="1.2" stroke-dasharray="4 4" />
+              <circle cx="500" cy="325" r="200" fill="none" stroke="#1E293B" stroke-width="1.2" />
+              <circle cx="500" cy="325" r="290" fill="none" stroke="#334155" stroke-width="1.5" />
+
+              <!-- Crosshairs -->
+              <line x1="500" y1="20" x2="500" y2="630" stroke="#1E293B" stroke-width="1.2" stroke-dasharray="5 5" />
+              <line x1="20" y1="325" x2="980" y2="325" stroke="#1E293B" stroke-width="1.2" stroke-dasharray="5 5" />
+
+              <!-- Coordinates Readout -->
+              <text x="30" y="45" font-family="'Space Mono', monospace" font-size="11" fill="#38BDF8" font-weight="bold" letter-spacing="3">GLOBAL RECOVERY MAP · 2024–2026</text>
+              <text x="970" y="45" font-family="'Space Mono', monospace" font-size="11" fill="#94A3B8" letter-spacing="2" text-anchor="end">6 URBAN NODES</text>
+
+              <!-- Stylized World Outline -->
+              <path d="M 120 220 Q 220 180 340 250 Q 420 300 480 280 Q 600 230 760 210 Q 860 260 920 330 Q 850 420 720 400 Q 610 460 480 430 Q 340 460 200 400 Z" fill="none" stroke="#1E293B" stroke-width="1.5" opacity="0.4" />
+
+              <!-- BEACON 1: TOKYO (Shibuya Station) -->
+              <g class="radar-beacon active" data-location="TOKYO">
+                <circle cx="820" cy="270" r="14" class="beacon-ring" />
+                <circle cx="820" cy="270" r="7" class="beacon-core" />
+                <text x="835" y="265" font-family="'Space Mono', monospace" font-size="12" fill="#FAF7F2" font-weight="bold">TOKYO · 2024</text>
+                <text x="835" y="280" font-family="'Space Mono', monospace" font-size="9" fill="#38BDF8">TRANSIT PASS</text>
+              </g>
+
+              <!-- BEACON 2: NEW YORK (Brooklyn Bridge) -->
+              <g class="radar-beacon" data-location="NEW YORK">
+                <circle cx="280" cy="240" r="14" class="beacon-ring" />
+                <circle cx="280" cy="240" r="7" class="beacon-core" />
+                <text x="295" y="235" font-family="'Space Mono', monospace" font-size="12" fill="#FAF7F2" font-weight="bold">NYC · 2024</text>
+                <text x="295" y="250" font-family="'Space Mono', monospace" font-size="9" fill="#38BDF8">POLAROID PRINT</text>
+              </g>
+
+              <!-- BEACON 3: LONDON (South Bank) -->
+              <g class="radar-beacon" data-location="LONDON">
+                <circle cx="470" cy="200" r="14" class="beacon-ring" />
+                <circle cx="470" cy="200" r="7" class="beacon-core" />
+                <text x="485" y="195" font-family="'Space Mono', monospace" font-size="12" fill="#FAF7F2" font-weight="bold">LONDON · 2024</text>
+                <text x="485" y="210" font-family="'Space Mono', monospace" font-size="9" fill="#38BDF8">SILVER RING</text>
+              </g>
+
+              <!-- BEACON 4: BERLIN (Kreuzberg) -->
+              <g class="radar-beacon" data-location="BERLIN">
+                <circle cx="530" cy="215" r="14" class="beacon-ring" />
+                <circle cx="530" cy="215" r="7" class="beacon-core" />
+                <text x="545" y="210" font-family="'Space Mono', monospace" font-size="12" fill="#FAF7F2" font-weight="bold">BERLIN · 2025</text>
+                <text x="545" y="225" font-family="'Space Mono', monospace" font-size="9" fill="#38BDF8">35MM CAMERA</text>
+              </g>
+
+              <!-- BEACON 5: SEOUL (Gangnam) -->
+              <g class="radar-beacon" data-location="SEOUL">
+                <circle cx="780" cy="285" r="14" class="beacon-ring" />
+                <circle cx="780" cy="285" r="7" class="beacon-core" />
+                <text x="700" y="315" font-family="'Space Mono', monospace" font-size="12" fill="#FAF7F2" font-weight="bold">SEOUL · 2025</text>
+                <text x="700" y="330" font-family="'Space Mono', monospace" font-size="9" fill="#38BDF8">WIRELESS EARBUD</text>
+              </g>
+
+              <!-- BEACON 6: SAN FRANCISCO (Mission District) -->
+              <g class="radar-beacon" data-location="SAN FRANCISCO">
+                <circle cx="160" cy="265" r="14" class="beacon-ring" />
+                <circle cx="160" cy="265" r="7" class="beacon-core" />
+                <text x="175" y="260" font-family="'Space Mono', monospace" font-size="12" fill="#FAF7F2" font-weight="bold">SF · 2026</text>
+                <text x="175" y="275" font-family="'Space Mono', monospace" font-size="9" fill="#38BDF8">DRONE CARD</text>
+              </g>
+            </svg>
+          </div>
+
+          <!-- Active Location Dossier Panel -->
+          <aside class="map-info-panel" aria-live="polite">
+            <div class="map-info-pretitle">LOCATION TELEMETRY</div>
+            <h3 id="map-loc-name" class="map-info-loc-name">SHIBUYA STATION, TOKYO</h3>
+
+            <div class="map-metrics-row">
+              <div>
+                <div class="map-metric-title">OBJECTS LOST HERE</div>
+                <div id="map-loc-count" class="map-metric-value">05</div>
+              </div>
+              <div>
+                <div class="map-metric-title">MOST COMMON</div>
+                <div id="map-loc-common" class="map-metric-value">Transit Passes</div>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+              <div class="map-metric-title">LAST RECORDED</div>
+              <div id="map-loc-last" class="map-metric-value" style="font-size: 1.15rem;">2024</div>
+            </div>
+
+            <p id="map-loc-poetry" class="map-loc-poetry">
+              “Under neon umbrellas outside the Hachiko gates, thousands crossed paths every two minutes. What slipped from their pockets fell into tomorrow.”
+            </p>
+
+            <button id="btn-map-inspect" class="btn-enter" style="width: 100%; justify-content: center; padding: 1.1rem;">
+              INSPECT THIS ARTIFACT
+            </button>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         9. THE STORY ROOM
+         ========================================================================= -->
+    <section id="story-room">
+      <div class="container-narrow story-carousel-container">
+        <div class="section-meta">ORAL ARCHIVES</div>
+        <h2 class="section-title">EVERY OBJECT<br>HAS A STORY.</h2>
+
+        <div id="story-stage" class="story-stage-card" aria-live="polite">
+          <!-- Populated dynamically via main.js -->
+        </div>
+
+        <div class="story-controls-row">
+          <button id="story-prev-btn" class="btn-story-nav" aria-label="Previous Story">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <span>PREVIOUS</span>
+          </button>
+
+          <div id="story-progress" class="story-progress-indicator">STORY 01 / 06</div>
+
+          <button id="story-next-btn" class="btn-story-nav" aria-label="Next Story">
+            <span>NEXT</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         10. DONATE A MEMORY & YOUR OBJECT
+         ========================================================================= -->
+    <section id="donate">
+      <div class="container">
+        <div class="donate-layout-grid">
+          <!-- Submission Form -->
+          <div class="donation-form-panel">
+            <div class="section-meta">DONATE A MEMORY</div>
+            <h2 class="section-title" style="font-size: 2.8rem;">WHAT HAVE YOU LOST?</h2>
+            <p class="section-subheading" style="margin-bottom: 2rem; font-size: 1.15rem;">
+              “Not everything belongs in a museum.<br>
+              But perhaps yours does.”
+            </p>
+
+            <!-- Success Confirmation Banner -->
+            <div id="donation-success" class="donation-success-banner" role="alert">
+              <div class="success-stamp-title">OBJECT RECEIVED.</div>
+              <div class="success-stamp-message">“Some things are worth remembering.”</div>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem;">
+                Your entry has been cataloged into your personal browser archive on the right.
+              </p>
+            </div>
+
+            <form id="donation-form">
+              <!-- Real Photo Upload Section -->
+              <div class="form-group">
+                <label class="form-label">
+                  REAL PHOTO OF LOST OBJECT <span style="color: var(--accent-vermilion); font-weight: bold;">*</span>
+                </label>
+                <div class="photo-upload-dropzone" id="photo-dropzone">
+                  <input
+                    type="file"
+                    id="donate-photo-file"
+                    accept="image/*"
+                    class="photo-file-input"
+                    aria-label="Upload real photo of lost object"
+                  />
+                  <div class="upload-empty-ui" id="upload-empty-ui">
+                    <div class="upload-icon-circle">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                        <circle cx="12" cy="13" r="4"></circle>
+                      </svg>
+                    </div>
+                    <div class="upload-prompt-text">
+                      <strong>Click to upload real photo</strong> or drag &amp; drop here
+                    </div>
+                    <div class="upload-hint">Upload actual photo from your smartphone or camera (JPG, PNG, WebP)</div>
+                  </div>
+
+                  <div class="upload-preview-ui" id="upload-preview-ui" style="display: none;">
+                    <img id="upload-preview-img" src="" alt="Uploaded real photograph" />
+                    <button type="button" id="btn-remove-photo" class="btn-remove-photo">✕ Change / Remove Photo</button>
+                  </div>
+                </div>
+
+                <!-- Specimen Presets -->
+                <div class="preset-photos-row">
+                  <span class="preset-label">OR CHOOSE SPECIMEN PHOTO:</span>
+                  <button type="button" class="preset-photo-btn" data-preset="keycard">Keycard</button>
+                  <button type="button" class="preset-photo-btn" data-preset="transit">Transit Card</button>
+                  <button type="button" class="preset-photo-btn" data-preset="ring">Silver Ring</button>
+                  <button type="button" class="preset-photo-btn" data-preset="sunglasses">Sunglasses</button>
+                  <button type="button" class="preset-photo-btn" data-preset="polaroid">Instant Photo</button>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="donate-name" class="form-label">OBJECT NAME</label>
+                <input
+                  type="text"
+                  id="donate-name"
+                  class="form-control"
+                  placeholder="e.g. Scratched Metrocard, Vintage Aviators, Room 304 Keycard"
+                  required
+                />
+              </div>
+
+              <div class="form-group form-row-dual">
+                <div>
+                  <label for="donate-year" class="form-label">YEAR (2024–2026)</label>
+                  <select id="donate-year" class="form-control" required>
+                    <option value="2024">2024 (Inaugural Year)</option>
+                    <option value="2025">2025 (Expansion Year)</option>
+                    <option value="2026" selected>2026 (Present Day)</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="donate-place" class="form-label">PLACE / CITY</label>
+                  <input
+                    type="text"
+                    id="donate-place"
+                    class="form-control"
+                    placeholder="e.g. Shibuya Station, Central Park, London Tube"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="donate-category" class="form-label">EMOTIONAL CATEGORY</label>
+                <select id="donate-category" class="form-control" required>
+                  <option value="NOSTALGIA">NOSTALGIA</option>
+                  <option value="REGRET">REGRET</option>
+                  <option value="LOVE">LOVE</option>
+                  <option value="CHANGE">CHANGE</option>
+                  <option value="ABSENCE">ABSENCE</option>
+                  <option value="JOY">JOY</option>
+                  <option value="GOODBYE">GOODBYE</option>
+                  <option value="MYSTERY">MYSTERY</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="donate-why" class="form-label">WHY IT MATTERS / STORY</label>
+                <textarea
+                  id="donate-why"
+                  class="form-control"
+                  placeholder="Write what it held, how it disappeared, and what remained behind..."
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn-submit-donation">
+                REGISTER REAL OBJECT INTO EXHIBITION
+              </button>
+            </form>
+          </div>
+
+          <!-- Personal Local Archive: YOUR OBJECT -->
+          <div class="user-archive-panel" id="your-object">
+            <div class="section-meta">PERSONAL COLLECTION</div>
+            <h3 class="user-archive-title">YOUR OBJECT</h3>
+            <p class="user-archive-sub">STORED IN LOCAL BROWSER ARCHIVE</p>
+
+            <div id="user-archive-list" class="user-archive-list">
+              <!-- Populated via localStorage in main.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         11. FINAL SECTION
+         ========================================================================= -->
+    <section id="conclusion">
+      <div class="container-narrow">
+        <div class="section-meta" style="justify-content: center; margin-bottom: 2rem;">FINAL ACCESSION NOTE</div>
+        <div class="conclusion-triad">
+          <span>SOME THINGS ARE LOST.</span>
+          <span class="faded-line">SOME THINGS ARE FOUND.</span>
+          <span>SOME THINGS STAY WITH US.</span>
+        </div>
+        <p class="conclusion-support">
+          “Maybe that is what makes them worth keeping.”
+        </p>
+        <button id="btn-return-collection" class="btn-return-collection">
+          <span>RETURN TO THE COLLECTION</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5 12 12 5 19 12"></polyline>
+          </svg>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       12. FOOTER
+       ========================================================================= -->
+  <footer id="museum-footer">
+    <div class="container">
+      <div class="footer-top-row">
+        <div>
+          <h2 class="footer-brand-title">FOUND.</h2>
+          <div class="footer-sub">THE MUSEUM OF LOST THINGS</div>
+        </div>
+
+        <ul class="footer-links">
+          <li><a href="#collection" class="footer-link">COLLECTION</a></li>
+          <li><a href="#search" class="footer-link">ARCHIVE</a></li>
+          <li><a href="#categories" class="footer-link">CATEGORIES</a></li>
+          <li><a href="#timeline" class="footer-link">TIMELINE</a></li>
+          <li><a href="#map" class="footer-link">MAP</a></li>
+          <li><a href="#story-room" class="footer-link">STORIES</a></li>
+          <li><a href="#donate" class="footer-link">YOUR OBJECT</a></li>
+          <li><a href="#" class="footer-link curator-trigger-link">CURATOR’S NOTE</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom-row">
+        <div>An interactive digital installation. Everything lost leaves something behind.</div>
+        <div>FOUND ARCHIVES © 2026 · ALL RIGHTS RESERVED</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       4. OBJECT INSPECTOR (Modal Dossier)
+       ========================================================================= -->
+  <div id="inspector-modal" class="inspector-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Object Inspector">
+    <div class="inspector-window">
+      <div class="inspector-top-bar">
+        <div class="inspector-accession-code" id="insp-accession">ARCHIVE / 001</div>
+        <button id="btn-close-inspector" class="btn-close-inspector" aria-label="Close Inspector">
+          <span>CLOSE [ESC]</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="inspector-content">
+        <!-- Visual Column -->
+        <div class="inspector-visual-pane">
+          <div class="inspector-image-container">
+            <img id="insp-image" src="assets/images/object-01.svg" alt="Artifact visual display" />
+          </div>
+        </div>
+
+        <!-- Metadata & Narrative Column -->
+        <div class="inspector-data-pane">
+          <div>
+            <div class="inspector-dossier-header">
+              <div id="insp-num" class="inspector-num">OBJECT 01</div>
+              <h2 id="insp-title" class="inspector-name">A RED HOTEL KEYCARD</h2>
+            </div>
+
+            <div class="inspector-metadata-grid">
+              <div>
+                <div class="meta-field-label">FOUND YEAR</div>
+                <div id="insp-year" class="meta-field-val">2004</div>
+              </div>
+              <div>
+                <div class="meta-field-label">LOCATION</div>
+                <div id="insp-place" class="meta-field-val">Downtown LA</div>
+              </div>
+              <div>
+                <div class="meta-field-label">CATEGORY</div>
+                <div id="insp-category" class="meta-field-val">MYSTERY</div>
+              </div>
+            </div>
+
+            <div class="inspector-story-heading">FICTIONAL DOSSIER STORY</div>
+            <p id="insp-story" class="inspector-story-body">
+              “Found on an unmade bedside table after the occupant checked out at dawn. No record of who stayed in Room 204 exists in the ledger.”
+            </p>
+
+            <div class="inspector-why-box">
+              <div class="inspector-why-label">WHY IT MATTERS</div>
+              <div id="insp-why" class="inspector-why-text">
+                Keycards expire at noon, but whatever conversation happened in Room 204 lingers permanently.
+              </div>
+            </div>
+          </div>
+
+          <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.1em; border-top: 1px solid var(--border-fine); padding-top: 1rem;">
+            Use ← and → arrow keys to navigate between objects
+          </div>
+        </div>
+      </div>
+
+      <div class="inspector-nav-bar">
+        <button id="btn-inspector-prev" class="inspector-nav-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>PREVIOUS OBJECT</span>
+        </button>
+
+        <button id="btn-inspector-next" class="inspector-nav-btn">
+          <span>NEXT OBJECT</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       13. RANDOM OBJECT MODAL ("SURPRISE ME")
+       ========================================================================= -->
+  <div id="random-object-modal" class="random-object-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Random Object">
+    <div class="random-card-box">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-fine); padding-bottom: 1.25rem; margin-bottom: 1.75rem;">
+        <div class="section-meta" style="margin-bottom: 0;">SERENDIPITOUS RECOVERY</div>
+        <button id="btn-close-random" class="btn-close-inspector" aria-label="Close Random Object">✕</button>
+      </div>
+
+      <div class="random-card-grid">
+        <div class="random-card-img-wrap">
+          <img id="random-obj-image" src="assets/images/object-01.svg" alt="Random object" style="width: 100%; display: block;" />
+        </div>
+        <div>
+          <h3 id="random-obj-title" class="random-card-title">A RED HOTEL KEYCARD</h3>
+          <div id="random-obj-meta" class="random-card-meta">2004 · Downtown LA</div>
+          <p id="random-obj-story" class="random-card-story">
+            “Story loading...”
+          </p>
+        </div>
+      </div>
+
+      <div class="random-card-actions">
+        <button id="btn-reroll-random" class="btn-story-nav">
+          <span>🎲 ANOTHER OBJECT</span>
+        </button>
+        <button id="btn-inspect-random" class="btn-enter" style="padding: 0.85rem 1.6rem; font-size: 0.75rem;">
+          <span>FULL DOSSIER</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       14. CURATOR REFLECTION MODAL
+       ========================================================================= -->
+  <div id="curator-modal" class="curator-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Curator Note">
+    <div class="curator-box">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-fine); padding-bottom: 1.25rem; margin-bottom: 2rem;">
+        <div class="section-meta" style="margin-bottom: 0;">CURATOR’S REFLECTION</div>
+        <button id="btn-close-curator" class="btn-close-inspector" aria-label="Close Curator Note">✕</button>
+      </div>
+
+      <blockquote id="curator-quote" class="curator-quote-body">
+        “Objects are rarely important because of what they are. They become important because of what they remember.”
+      </blockquote>
+
+      <div class="curator-card-footer">
+        <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);">
+          CHIEF CONSERVATOR OF FORGOTTEN OBJECTS
+        </div>
+        <button id="btn-next-curator" class="btn-story-nav">
+          <span>NEXT REFLECTION</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Master JavaScript Engine -->
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1440 @@
+/* ==========================================================================
+   FOUND — THE MUSEUM OF LOST THINGS
+   Master Responsive Stylesheet & Mobile Layout Engine
+   Precision-crafted for Phone Compactness ("konjam small") & Decluttering
+   Tested across 320px, 360px, 375px, 390px, 414px, 768px, 1024px, 1440px
+   Preserves desktop aesthetic, luxury typography, dark-mode & functionality
+   ========================================================================== */
+
+/* Universal Responsive Base Guard */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+img, svg, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
+   1. TABLET & SMALL DESKTOPS (Max 1100px)
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .container {
+    padding: 0 2rem;
+  }
+
+  .collection-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.75rem;
+  }
+
+  .card-span-4,
+  .card-span-5,
+  .card-span-6,
+  .card-span-7,
+  .card-span-8,
+  .card-span-12 {
+    grid-column: span 3;
+  }
+
+  .card-span-12 {
+    grid-column: span 6;
+  }
+
+  .inspector-content {
+    grid-template-columns: 1fr;
+  }
+
+  .inspector-visual-pane {
+    border-right: none;
+    border-bottom: 1px solid var(--border-fine);
+    padding: 2rem;
+  }
+
+  .map-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .map-info-panel {
+    position: static;
+  }
+
+  .timeline-display-card {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .timeline-preview-frame {
+    border-right: none;
+    border-bottom: 1px solid var(--border-fine);
+    padding: 2rem;
+  }
+
+  .timeline-data-content {
+    padding: 2.5rem 2rem;
+  }
+
+  .donate-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .user-archive-panel {
+    position: static;
+  }
+
+  .cat-filtered-results,
+  .search-results-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ==========================================================================
+   2. MOBILE & TABLET PORTRAIT (Max 850px)
+   Focused on Compactness ("konjam small") and Essential Content Decluttering
+   ========================================================================== */
+@media (max-width: 850px) {
+  /* Layout Containers */
+  .container {
+    padding: 0 1.15rem;
+  }
+
+  .container-narrow {
+    padding: 0 1.15rem;
+  }
+
+  /* Universal Section Padding: Compact & Balanced */
+  #collection,
+  #search,
+  #categories,
+  #timeline,
+  #map,
+  #story-room,
+  #donate,
+  #conclusion {
+    padding: 2.5rem 0 2rem;
+  }
+
+  .section-header {
+    margin-bottom: 1.35rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.4rem, 5.2vw, 1.95rem);
+    letter-spacing: -0.01em;
+    margin-bottom: 0.35rem;
+  }
+
+  .section-desc {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+  }
+
+  .section-sub {
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    margin-bottom: 0.35rem;
+  }
+
+  /* -------------------------------------------------------------------------
+     Navigation & Mobile Menu Drawer
+     ------------------------------------------------------------------------- */
+  #museum-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(250, 247, 242, 0.98);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border-fine);
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  .nav-inner {
+    height: 58px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0.65rem;
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: baseline;
+    gap: 0.45rem;
+    flex-shrink: 0;
+  }
+
+  .nav-logo {
+    font-size: 1.38rem;
+    color: var(--text-primary);
+  }
+
+  .nav-subbrand {
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+  }
+
+  /* Hide desktop horizontal links */
+  .nav-links {
+    display: none !important;
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .nav-action-pill {
+    font-size: 0.68rem;
+    padding: 0.4rem 0.75rem;
+    letter-spacing: 0.1em;
+    min-height: 38px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    border-radius: 19px;
+  }
+
+  /* Mobile Toggle Hamburger Button */
+  .mobile-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    padding: 0;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-fine);
+    border-radius: 4px;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .mobile-toggle .close-icon {
+    display: none;
+  }
+
+  .mobile-toggle:hover,
+  .mobile-toggle.open {
+    border-color: var(--accent-vermilion);
+    color: var(--accent-vermilion);
+    background-color: rgba(224, 62, 45, 0.08);
+  }
+
+  .mobile-toggle.open .hamburger-icon {
+    display: none;
+  }
+
+  .mobile-toggle.open .close-icon {
+    display: block;
+  }
+
+  /* Mobile Menu Drawer - Warm Ivory Museum Palette */
+  .mobile-menu-drawer {
+    display: none;
+    position: fixed;
+    top: 58px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 58px);
+    height: calc(100dvh - 58px);
+    background-color: #FAF7F2;
+    background-color: rgba(250, 247, 242, 0.99);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 2px solid var(--border-fine);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    padding: 1.25rem 1.15rem calc(1.75rem + env(safe-area-inset-bottom, 0px));
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-menu-drawer.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: drawerFadeIn 0.22s ease-out;
+  }
+
+  .mobile-drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-fine);
+  }
+
+  .mobile-drawer-label {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+
+  .mobile-drawer-indicator {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--accent-vermilion);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+
+  .mobile-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    list-style: none;
+    margin-bottom: 1.5rem;
+  }
+
+  .mobile-nav-link {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--text-primary); /* Deep charcoal #1A1A18, high-contrast, crystal clear */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 46px;
+    padding: 0.6rem 0.25rem;
+    border-bottom: 1px solid rgba(26, 26, 24, 0.08);
+    text-decoration: none;
+    transition: color var(--transition-fast), padding-left var(--transition-fast);
+  }
+
+  .mobile-nav-link .nav-arrow {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--accent-vermilion);
+    opacity: 0.65;
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
+  }
+
+  .mobile-nav-link:hover,
+  .mobile-nav-link:active {
+    color: var(--accent-vermilion);
+    padding-left: 0.4rem;
+  }
+
+  .mobile-nav-link:hover .nav-arrow,
+  .mobile-nav-link:active .nav-arrow {
+    opacity: 1;
+    transform: translateX(3px);
+  }
+
+  .mobile-drawer-footer {
+    margin-top: auto;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border-fine);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .mobile-drawer-meta {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    text-align: center;
+  }
+
+  .btn-drawer-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--text-primary);
+    color: #FFFFFF;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    min-height: 42px;
+    transition: background-color var(--transition-fast);
+  }
+
+  .btn-drawer-action:hover {
+    background-color: var(--accent-vermilion);
+  }
+
+  /* -------------------------------------------------------------------------
+     1. Museum Entrance (#entrance) - Sleek, Compact & Decluttered
+     ------------------------------------------------------------------------- */
+  #entrance {
+    min-height: calc(100vh - 58px);
+    min-height: calc(100dvh - 58px);
+    padding: 1.35rem 1.15rem 1.35rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.25rem;
+  }
+
+  .entrance-top {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding-bottom: 0.85rem;
+  }
+
+  /* Decluttering: Hide redundant sub-archive labels on mobile */
+  .entrance-meta div:not(:last-child) {
+    display: none;
+  }
+
+  .entrance-meta {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    line-height: 1.3;
+  }
+
+  /* Hide redundant stamp on mobile to keep entrance clean */
+  .archival-stamp {
+    display: none;
+  }
+
+  .entrance-center {
+    padding: 0.85rem 0;
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .entrance-title-sup {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.55rem;
+  }
+
+  /* Compact Hero Typography ("konjam small") */
+  .entrance-main-title {
+    font-size: clamp(2.5rem, 11.5vw, 3.8rem);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    word-break: break-word;
+    margin-bottom: 0.35rem;
+  }
+
+  .entrance-subtitle {
+    font-size: clamp(1.15rem, 4.8vw, 1.55rem);
+    line-height: 1.12;
+    margin-bottom: 1.15rem;
+    letter-spacing: 0.02em;
+  }
+
+  .entrance-quote {
+    font-size: clamp(0.95rem, 3.8vw, 1.15rem);
+    line-height: 1.45;
+    padding-left: 0.85rem;
+    margin-bottom: 1.35rem;
+    max-width: 100%;
+  }
+
+  .entrance-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .btn-enter {
+    width: 100%;
+    justify-content: center;
+    padding: 0.85rem 1.35rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    min-height: 42px;
+    box-sizing: border-box;
+  }
+
+  /* Declutter: Hide footnote on mobile */
+  .entrance-footnote {
+    display: none;
+  }
+
+  .entrance-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+    padding-top: 0.85rem;
+  }
+
+  .tagline-callout {
+    font-size: 0.92rem;
+  }
+
+  .marquee-ticker-wrap {
+    padding: 0.45rem 0;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+  }
+
+  /* -------------------------------------------------------------------------
+     3. The Collection (#collection) - Compact Object Cards
+     ------------------------------------------------------------------------- */
+  .collection-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .collection-actions-bar {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.65rem;
+  }
+
+  .collection-actions-bar .btn-enter,
+  .collection-actions-bar .btn-random-lost {
+    width: 100%;
+    justify-content: center;
+    min-height: 40px;
+    padding: 0.75rem 1.15rem;
+    font-size: 0.7rem;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .gallery-category-bar {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.45rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.35rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .gallery-category-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cat-filter-btn {
+    flex-shrink: 0;
+    min-height: 36px;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+  }
+
+  .collection-grid {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+
+  .card-span-4,
+  .card-span-5,
+  .card-span-6,
+  .card-span-7,
+  .card-span-8,
+  .card-span-12 {
+    grid-column: span 1;
+  }
+
+  /* Compact Museum Card Design ("konjam small") */
+  .object-card {
+    padding: 1.1rem;
+    border-radius: 3px;
+  }
+
+  .card-header-meta {
+    margin-bottom: 0.65rem;
+    font-size: 0.68rem;
+  }
+
+  .card-visual-frame {
+    aspect-ratio: 16/10;
+    max-height: 190px;
+    margin-bottom: 0.85rem;
+    border-radius: 2px;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+    line-height: 1.25;
+    margin-bottom: 0.25rem;
+  }
+
+  .card-provenance {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Line clamp card caption to prevent gigantic cards on phones */
+  .card-caption {
+    font-size: 0.84rem;
+    line-height: 1.45;
+    margin-bottom: 0.85rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .card-footer-row {
+    padding-top: 0.65rem;
+  }
+
+  .btn-card-inspect {
+    min-height: 38px;
+    padding: 0.45rem 0.75rem;
+    font-size: 0.68rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  /* -------------------------------------------------------------------------
+     5. Search (#search)
+     ------------------------------------------------------------------------- */
+  .search-input {
+    font-size: 1rem !important; /* Prevents iOS auto-zoom */
+    padding: 0.75rem 0.85rem 0.75rem 2.5rem;
+    min-height: 44px;
+  }
+
+  .search-input-wrapper svg {
+    left: 0.85rem;
+    width: 17px;
+    height: 17px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .search-results-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.7rem;
+  }
+
+  .search-results-grid {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+
+  .search-empty-state {
+    padding: 2.25rem 1.25rem;
+  }
+
+  .search-empty-title {
+    font-size: 1.5rem;
+  }
+
+  /* -------------------------------------------------------------------------
+     6. Taxonomy of Memory (#categories)
+     ------------------------------------------------------------------------- */
+  .categories-pills-row {
+    gap: 0.45rem;
+    margin-bottom: 1.35rem;
+  }
+
+  .cat-btn {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    min-height: 38px;
+  }
+
+  .category-dossier-card {
+    padding: 1.35rem 1.1rem;
+    margin-bottom: 1.35rem;
+  }
+
+  .cat-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .cat-card-title {
+    font-size: clamp(1.4rem, 5vw, 1.95rem);
+  }
+
+  .cat-card-quote {
+    font-size: 0.98rem;
+    line-height: 1.45;
+    margin-bottom: 1.15rem;
+  }
+
+  /* -------------------------------------------------------------------------
+     7. Timeline (#timeline)
+     ------------------------------------------------------------------------- */
+  .timeline-nav-track {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    gap: 0.45rem;
+    padding: 0.4rem 0.2rem 0.85rem;
+    margin: 1rem 0 1.35rem;
+    scrollbar-width: thin;
+  }
+
+  .timeline-nav-track::before {
+    display: none !important;
+  }
+
+  .timeline-year-btn {
+    width: auto !important;
+    height: auto !important;
+    min-width: auto;
+    min-height: 38px;
+    padding: 0.45rem 0.85rem;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .timeline-display-card {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0;
+  }
+
+  .timeline-preview-frame {
+    border-right: none;
+    border-bottom: 1px solid var(--border-fine);
+    padding: 1.25rem 1rem;
+    width: 100%;
+  }
+
+  .timeline-preview-frame img {
+    max-height: 200px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .timeline-data-content {
+    padding: 1.35rem 1.1rem;
+  }
+
+  .timeline-obj-name {
+    font-size: 1.35rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-note-quote {
+    font-size: 0.92rem;
+    line-height: 1.45;
+    padding-left: 0.85rem;
+    margin-bottom: 1.15rem;
+  }
+
+  /* -------------------------------------------------------------------------
+     8. Radar Map (#map)
+     ------------------------------------------------------------------------- */
+  .map-quick-buttons {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.45rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.15rem;
+    scrollbar-width: none;
+  }
+
+  .map-quick-buttons::-webkit-scrollbar {
+    display: none;
+  }
+
+  .map-quick-btn {
+    flex-shrink: 0;
+    font-size: 0.68rem;
+    padding: 0.4rem 0.75rem;
+    letter-spacing: 0.08em;
+    min-height: 38px;
+  }
+
+  .map-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .map-viewport-frame {
+    min-height: 200px;
+    height: 220px;
+    border-radius: 2px;
+  }
+
+  .radar-map-svg {
+    width: 100%;
+    height: auto;
+    min-width: 100%;
+    display: block;
+  }
+
+  .map-info-panel {
+    position: static;
+    padding: 1.35rem 1.1rem;
+  }
+
+  .map-info-loc-name {
+    font-size: 1.35rem;
+  }
+
+  .map-metrics-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .map-metric-box {
+    padding: 0.6rem 0.75rem;
+  }
+
+  #btn-map-inspect {
+    min-height: 42px;
+    font-size: 0.72rem;
+  }
+
+  /* -------------------------------------------------------------------------
+     9. Oral Archives / Story Room (#story-room)
+     ------------------------------------------------------------------------- */
+  .story-stage-card {
+    padding: 1.5rem 1.1rem;
+    min-height: auto;
+    margin: 1.25rem 0 1rem;
+  }
+
+  .story-headline {
+    font-size: 1.35rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .story-body-text {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    margin-bottom: 1.25rem;
+  }
+
+  .story-controls-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.45rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .btn-story-nav {
+    padding: 0.55rem 0.8rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+  }
+
+  .story-progress-indicator {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  /* -------------------------------------------------------------------------
+     10. Donate a Memory & User Archive (#donate)
+     ------------------------------------------------------------------------- */
+  .donate-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .donation-form-panel {
+    padding: 1.35rem 1.1rem;
+  }
+
+  .form-row-dual {
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem;
+  }
+
+  .photo-upload-dropzone {
+    padding: 1.25rem 0.85rem;
+    min-height: 125px;
+  }
+
+  .preset-photos-row {
+    gap: 0.35rem;
+  }
+
+  .preset-photo-btn {
+    padding: 0.4rem 0.65rem;
+    font-size: 0.68rem;
+    min-height: 36px;
+  }
+
+  /* Form control: 16px font prevents iOS automatic page zoom */
+  .form-control {
+    font-size: 1rem !important;
+    min-height: 44px;
+    padding: 0.65rem 0.85rem;
+  }
+
+  .btn-submit-donation {
+    padding: 0.85rem 1rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    min-height: 44px;
+  }
+
+  .user-archive-panel {
+    position: static;
+    top: auto;
+  }
+
+  .user-archive-card {
+    padding: 1.15rem 1rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .user-archive-card-with-photo {
+    grid-template-columns: 70px 1fr;
+    gap: 0.85rem;
+  }
+
+  .user-archive-thumb-wrap {
+    width: 70px;
+    height: 70px;
+  }
+
+  .btn-delete-user-obj {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0.4rem;
+    right: 0.4rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+
+  /* -------------------------------------------------------------------------
+     11. Conclusion & Footer (#conclusion, #museum-footer)
+     ------------------------------------------------------------------------- */
+  .conclusion-triad {
+    font-size: clamp(1.35rem, 5vw, 2.1rem);
+    gap: 0.5rem;
+  }
+
+  .btn-return-collection {
+    width: 100%;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.85rem 1.15rem;
+  }
+
+  #museum-footer {
+    padding: 2.5rem 0;
+    padding-bottom: max(2.5rem, calc(1.5rem + env(safe-area-inset-bottom, 0px)));
+  }
+
+  .footer-top-row {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .footer-link {
+    min-height: 38px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .footer-bottom-row {
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.68rem;
+    line-height: 1.45;
+  }
+
+  /* -------------------------------------------------------------------------
+     12. Modals (#inspector-modal, #random-object-modal, #curator-modal)
+     ------------------------------------------------------------------------- */
+  .inspector-modal,
+  .random-object-modal,
+  .curator-modal {
+    padding: 0.5rem;
+    z-index: 100000;
+    align-items: center;
+  }
+
+  .inspector-window {
+    max-height: 94vh;
+    max-height: 94dvh;
+    width: 100%;
+    border-radius: 4px;
+  }
+
+  .inspector-top-bar {
+    padding: 0.7rem 0.85rem;
+  }
+
+  .btn-close-inspector {
+    min-width: 40px;
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem;
+    font-size: 0.72rem;
+  }
+
+  .inspector-content {
+    grid-template-columns: 1fr;
+    max-height: calc(94vh - 105px);
+    max-height: calc(94dvh - 105px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .inspector-visual-pane {
+    padding: 1.15rem 0.85rem;
+    border-right: none;
+    border-bottom: 1px solid var(--border-fine);
+  }
+
+  .inspector-image-container {
+    max-width: 100%;
+    max-height: 220px;
+  }
+
+  .inspector-image-container img {
+    max-height: 200px;
+    object-fit: contain;
+  }
+
+  .inspector-data-pane {
+    padding: 1.15rem 0.85rem 1rem;
+  }
+
+  .inspector-name {
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+
+  .inspector-metadata-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    padding: 0.75rem 0;
+    margin-bottom: 1rem;
+  }
+
+  .inspector-story-body {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    margin-bottom: 1.15rem;
+  }
+
+  .inspector-why-box {
+    padding: 0.85rem;
+    margin-bottom: 1.15rem;
+    font-size: 0.85rem;
+  }
+
+  .inspector-nav-bar {
+    padding: 0.65rem 0.85rem;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  .inspector-nav-btn {
+    flex: 1 1 45%;
+    justify-content: center;
+    padding: 0.55rem 0.45rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    min-height: 40px;
+  }
+
+  /* Random & Curator Modals */
+  .random-card-box,
+  .curator-box {
+    padding: 1.35rem 1rem;
+    max-height: 92vh;
+    max-height: 92dvh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+  }
+
+  .random-card-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    margin-bottom: 1.15rem !important;
+  }
+
+  .random-card-img-wrap {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-fine);
+    padding: 0.75rem;
+    max-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .random-card-img-wrap img {
+    max-height: 150px;
+    object-fit: contain;
+  }
+
+  .random-card-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .random-card-meta {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--accent-vermilion);
+    margin-bottom: 0.55rem;
+  }
+
+  .random-card-story {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .random-card-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.55rem !important;
+  }
+
+  .random-card-actions button {
+    width: 100%;
+    justify-content: center;
+    min-height: 40px;
+    font-size: 0.72rem;
+  }
+
+  .curator-quote-body {
+    font-size: 1.25rem;
+    line-height: 1.45;
+    margin-bottom: 1.25rem;
+  }
+
+  .curator-card-footer {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
+    border-top: 1px solid var(--border-fine);
+    padding-top: 1rem;
+  }
+
+  .curator-card-footer button {
+    width: 100%;
+    justify-content: center;
+    min-height: 40px;
+    font-size: 0.72rem;
+  }
+}
+
+/* ==========================================================================
+   3. SMARTPHONES COMPACT TIER (Max 640px)
+   Declutters verbose header text and trims spacing
+   ========================================================================== */
+@media (max-width: 640px) {
+  /* Hide subbrand in navbar to preserve clean horizontal bar */
+  .nav-subbrand {
+    display: none;
+  }
+
+  /* Switch action pill to short label "+ PHOTO" */
+  .nav-pill-full {
+    display: none !important;
+  }
+
+  .nav-pill-short {
+    display: inline !important;
+  }
+
+  .nav-action-pill {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.65rem;
+    min-height: 36px;
+  }
+
+  /* Compact entrance title */
+  .entrance-main-title {
+    font-size: clamp(2.4rem, 11vw, 3.4rem);
+  }
+
+  .entrance-subtitle {
+    font-size: clamp(1.1rem, 4.6vw, 1.4rem);
+  }
+
+  /* Hide secondary entrance tagline subtext */
+  .entrance-bottom div[style*="font-family: var(--font-mono)"] {
+    display: none;
+  }
+
+  /* Cards on compact smartphones */
+  .object-card {
+    padding: 1rem;
+  }
+
+  .card-visual-frame {
+    max-height: 175px;
+  }
+
+  .card-title {
+    font-size: 1.18rem;
+  }
+}
+
+/* ==========================================================================
+   4. COMPACT SMARTPHONES (Max 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.95rem;
+  }
+
+  .container-narrow {
+    padding: 0 0.95rem;
+  }
+
+  .nav-logo {
+    font-size: 1.28rem;
+  }
+
+  .mobile-toggle {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
+  }
+
+  .object-card {
+    padding: 0.9rem;
+  }
+
+  .card-provenance {
+    font-size: 0.65rem;
+  }
+
+  .card-caption {
+    font-size: 0.8rem;
+  }
+
+  /* User Archive on Compact Screens */
+  .user-archive-card-with-photo {
+    grid-template-columns: 60px 1fr;
+    gap: 0.75rem;
+  }
+
+  .user-archive-thumb-wrap {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Modals on Compact Screens */
+  .inspector-modal,
+  .random-object-modal,
+  .curator-modal {
+    padding: 0.25rem;
+  }
+
+  .inspector-image-container {
+    max-height: 180px;
+  }
+
+  .inspector-image-container img {
+    max-height: 165px;
+  }
+
+  .inspector-name {
+    font-size: 1.25rem;
+  }
+
+  .inspector-story-body {
+    font-size: 0.88rem;
+  }
+
+  .inspector-why-box {
+    font-size: 0.8rem;
+    padding: 0.65rem;
+  }
+
+  .inspector-nav-btn {
+    font-size: 0.62rem;
+    padding: 0.5rem 0.35rem;
+    letter-spacing: 0.05em;
+  }
+
+  .inspector-nav-btn svg {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* ==========================================================================
+   5. NARROW SMARTPHONES (Max 360px - e.g. iPhone SE 1st, Galaxy Fold)
+   ========================================================================== */
+@media (max-width: 360px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .nav-logo {
+    font-size: 1.2rem;
+  }
+
+  .nav-action-pill {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.62rem;
+  }
+
+  .entrance-main-title {
+    font-size: 2.25rem;
+  }
+
+  .entrance-subtitle {
+    font-size: 1.05rem;
+  }
+
+  .entrance-meta {
+    font-size: 0.62rem;
+  }
+
+  .btn-enter {
+    font-size: 0.68rem;
+    padding: 0.75rem 0.95rem;
+    letter-spacing: 0.08em;
+  }
+
+  .timeline-year-btn {
+    font-size: 0.65rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .object-card {
+    padding: 0.8rem;
+  }
+
+  .card-title {
+    font-size: 1.08rem;
+  }
+
+  .user-archive-card-with-photo {
+    grid-template-columns: 1fr;
+  }
+
+  .user-archive-thumb-wrap {
+    width: 100%;
+    height: 120px;
+  }
+}
+
+/* ==========================================================================
+   6. TOUCH DEVICES & COARSE POINTERS
+   ========================================================================== */
+@media (pointer: coarse), (hover: none) {
+  /* Remove custom mouse cursor that lags or gets stuck on touch displays */
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+
+  /* Disable translate hover lift on touch to prevent sticky hover states */
+  .object-card {
+    transform: none !important;
+  }
+
+  .object-card:hover {
+    transform: none !important;
+  }
+
+  /* Ensure smooth responsive touch targets on coarse pointer screens */
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    touch-action: manipulation;
+  }
+}
+
+/* ==========================================================================
+   7. ACCESSIBILITY: REDUCED MOTION PREFERENCES
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .marquee-ticker {
+    animation: none !important;
+  }
+
+  .radar-sweep-beam,
+  .beacon-ring {
+    animation: none !important;
+  }
+}

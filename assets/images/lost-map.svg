@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="100%" height="100%" id="fictional-cartography">
+  <defs>
+    <radialGradient id="cyberGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E03E2D" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="blueGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="modernMapGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1E293B" stroke-width="1" />
+    </pattern>
+    <pattern id="subGrid" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#1E293B" stroke-width="0.3" />
+    </pattern>
+  </defs>
+
+  <!-- Modern Dark Slate Canvas -->
+  <rect width="1000" height="650" fill="#0B0F19" />
+  <rect width="1000" height="650" fill="url(#subGrid)" opacity="0.6" />
+  <rect width="1000" height="650" fill="url(#modernMapGrid)" opacity="0.8" />
+
+  <!-- Outer Glass Frame -->
+  <rect x="25" y="25" width="950" height="600" fill="none" stroke="#334155" stroke-width="1.5" />
+  <rect x="29" y="29" width="942" height="592" fill="none" stroke="#1E293B" stroke-width="1" />
+
+  <!-- Corner Coordinates & HUD Markers -->
+  <path d="M 25 45 L 45 45 L 45 25" stroke="#38BDF8" stroke-width="2" fill="none" />
+  <path d="M 975 45 L 955 45 L 955 25" stroke="#38BDF8" stroke-width="2" fill="none" />
+  <path d="M 25 605 L 45 605 L 45 625" stroke="#38BDF8" stroke-width="2" fill="none" />
+  <path d="M 975 605 L 955 605 L 955 625" stroke="#38BDF8" stroke-width="2" fill="none" />
+
+  <!-- Digital HUD Header -->
+  <text x="50" y="55" font-family="'Space Mono', monospace" font-size="11" font-weight="bold" fill="#38BDF8" letter-spacing="3">DIGITAL DISPATCH MAP · CONTEMPORARY RADAR (2000–2026)</text>
+  <text x="950" y="55" font-family="'Space Mono', monospace" font-size="11" fill="#94A3B8" letter-spacing="2" text-anchor="end">SYS_STATUS: ACTIVE · NODES: 06</text>
+
+  <!-- Glowing Waterway / Canal (Modern Vector) -->
+  <path d="M 30 220 C 180 180, 320 280, 480 250 C 640 220, 780 360, 970 320" fill="none" stroke="#0284C7" stroke-width="18" opacity="0.35" stroke-linecap="round" />
+  <path d="M 30 220 C 180 180, 320 280, 480 250 C 640 220, 780 360, 970 320" fill="none" stroke="#38BDF8" stroke-width="4" opacity="0.8" stroke-linecap="round" />
+  <text x="360" y="280" font-family="'Space Mono', monospace" font-size="10" fill="#38BDF8" letter-spacing="3">EAST WATERFRONT CANAL</text>
+
+  <!-- Modern Transit / High-Speed Rail Lines -->
+  <path d="M 70 90 L 920 90" stroke="#E11D48" stroke-width="3" stroke-dasharray="10,5" opacity="0.65" />
+  <path d="M 230 70 L 230 580" stroke="#38BDF8" stroke-width="2" stroke-dasharray="6,4" opacity="0.5" />
+  <path d="M 690 70 L 690 580" stroke="#F59E0B" stroke-width="2" stroke-dasharray="6,4" opacity="0.5" />
+  <path d="M 80 520 L 920 520" stroke="#22C55E" stroke-width="3" stroke-dasharray="12,6" opacity="0.65" />
+
+  <!-- District Polygons (Modern Semi-transparent Blocks) -->
+  <rect x="130" y="110" width="180" height="120" rx="6" fill="#1E293B" opacity="0.45" stroke="#334155" stroke-width="1" />
+  <text x="145" y="135" font-family="'Space Mono', monospace" font-size="9" fill="#94A3B8">SECTOR 01 · RETRO CINEMA</text>
+
+  <rect x="580" y="110" width="230" height="130" rx="6" fill="#1E293B" opacity="0.45" stroke="#334155" stroke-width="1" />
+  <text x="595" y="135" font-family="'Space Mono', monospace" font-size="9" fill="#94A3B8">SECTOR 02 · STREET ARCADE</text>
+
+  <rect x="150" y="380" width="220" height="130" rx="6" fill="#1E293B" opacity="0.45" stroke="#334155" stroke-width="1" />
+  <text x="165" y="405" font-family="'Space Mono', monospace" font-size="9" fill="#94A3B8">SECTOR 03 · HOTEL DISTRICT</text>
+
+  <rect x="570" y="400" width="280" height="140" rx="6" fill="#1E293B" opacity="0.45" stroke="#334155" stroke-width="1" />
+  <text x="585" y="425" font-family="'Space Mono', monospace" font-size="9" fill="#94A3B8">SECTOR 04 · HIGH-SPEED PERIMETER</text>
+
+  <!-- Modern Radar Pulse Rings -->
+  <circle cx="230" cy="90" r="45" fill="url(#cyberGlow)" />
+  <circle cx="760" cy="520" r="55" fill="url(#cyberGlow)" />
+
+  <!-- INTERACTIVE NODES (Data matching JS) -->
+
+  <!-- 1. METRO TERMINAL (x: 230, y: 90) -->
+  <g class="map-interactive-pin" data-location="NORTH STATION" cursor="pointer" transform="translate(230, 90)">
+    <circle cx="0" cy="0" r="20" fill="#E11D48" opacity="0.2" class="pin-pulse" />
+    <circle cx="0" cy="0" r="8" fill="#E11D48" stroke="#FFFFFF" stroke-width="2.5" />
+    <rect x="-65" y="-36" width="130" height="22" rx="4" fill="#0F172A" stroke="#E11D48" stroke-width="1" />
+    <text x="0" y="-21" font-family="'Space Mono', monospace" font-size="9" font-weight="bold" fill="#FFFFFF" text-anchor="middle">METRO TERMINAL</text>
+  </g>
+
+  <!-- 2. OLD CINEMA (x: 190, y: 190) -->
+  <g class="map-interactive-pin" data-location="OLD CINEMA" cursor="pointer" transform="translate(190, 190)">
+    <circle cx="0" cy="0" r="20" fill="#F59E0B" opacity="0.2" class="pin-pulse" />
+    <circle cx="0" cy="0" r="8" fill="#F59E0B" stroke="#FFFFFF" stroke-width="2.5" />
+    <rect x="-55" y="-36" width="110" height="22" rx="4" fill="#0F172A" stroke="#F59E0B" stroke-width="1" />
+    <text x="0" y="-21" font-family="'Space Mono', monospace" font-size="9" font-weight="bold" fill="#FFFFFF" text-anchor="middle">RETRO CINEMA</text>
+  </g>
+
+  <!-- 3. WATERFRONT PIER (x: 520, y: 280) -->
+  <g class="map-interactive-pin" data-location="RIVER WALK" cursor="pointer" transform="translate(520, 280)">
+    <circle cx="0" cy="0" r="20" fill="#38BDF8" opacity="0.2" class="pin-pulse" />
+    <circle cx="0" cy="0" r="8" fill="#38BDF8" stroke="#FFFFFF" stroke-width="2.5" />
+    <rect x="-65" y="-36" width="130" height="22" rx="4" fill="#0F172A" stroke="#38BDF8" stroke-width="1" />
+    <text x="0" y="-21" font-family="'Space Mono', monospace" font-size="9" font-weight="bold" fill="#FFFFFF" text-anchor="middle">WATERFRONT PIER</text>
+  </g>
+
+  <!-- 4. ROOM 204 HOTEL (x: 270, y: 440) -->
+  <g class="map-interactive-pin" data-location="ROOM 17" cursor="pointer" transform="translate(270, 440)">
+    <circle cx="0" cy="0" r="20" fill="#E11D48" opacity="0.2" class="pin-pulse" />
+    <circle cx="0" cy="0" r="8" fill="#E11D48" stroke="#FFFFFF" stroke-width="2.5" />
+    <rect x="-60" y="-36" width="120" height="22" rx="4" fill="#0F172A" stroke="#E11D48" stroke-width="1" />
+    <text x="0" y="-21" font-family="'Space Mono', monospace" font-size="9" font-weight="bold" fill="#FFFFFF" text-anchor="middle">HOTEL ROOM 204</text>
+  </g>
+
+  <!-- 5. STREET ARCADE (x: 710, y: 180) -->
+  <g class="map-interactive-pin" data-location="MARKET STREET" cursor="pointer" transform="translate(710, 180)">
+    <circle cx="0" cy="0" r="20" fill="#22C55E" opacity="0.2" class="pin-pulse" />
+    <circle cx="0" cy="0" r="8" fill="#22C55E" stroke="#FFFFFF" stroke-width="2.5" />
+    <rect x="-60" y="-36" width="120" height="22" rx="4" fill="#0F172A" stroke="#22C55E" stroke-width="1" />
+    <text x="0" y="-21" font-family="'Space Mono', monospace" font-size="9" font-weight="bold" fill="#FFFFFF" text-anchor="middle">STREET ARCADE</text>
+  </g>
+
+  <!-- 6. THE LAST PLATFORM (x: 760, y: 520) -->
+  <g class="map-interactive-pin" data-location="THE LAST PLATFORM" cursor="pointer" transform="translate(760, 520)">
+    <circle cx="0" cy="0" r="22" fill="#E11D48" opacity="0.3" class="pin-pulse" />
+    <circle cx="0" cy="0" r="9" fill="#E11D48" stroke="#FFFFFF" stroke-width="3" />
+    <rect x="-70" y="-38" width="140" height="24" rx="4" fill="#0F172A" stroke="#E11D48" stroke-width="1.5" />
+    <text x="0" y="-22" font-family="'Space Mono', monospace" font-size="9.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">THE LAST PLATFORM</text>
+  </g>
+</svg>
